@@ -1,1 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maths
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maths
+  template:
+    metadata:
+      labels:
+        app: maths
+    spec:
+      containers:
+        - name: maths
+          image: dancraftdocker/maths:latest
+          ports:
+            - containerPort: 3000
 
